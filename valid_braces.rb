@@ -16,6 +16,24 @@ Examples
 "[({})](]" =>  False
 =end
 
+
 def validBraces(braces)
-  # TODO
+  open_braces = ["[", "{", "("]
+  close_braces = ["]", "}", ")"]
+  map = Hash[open_braces.zip(close_braces)]
+  stack = []
+  for i in 0..(braces.length - 1) do
+    ch = braces[i]
+    if(open_braces.include? ch)
+      stack.push(ch)
+    else
+      #we have a close symbol we can't match to, so the string is not valid
+      return false if(stack.empty?)
+      # we have a close symbol that has nothing to match to
+      return false if(map[stack.last] != ch)
+      # matches
+      stack.pop
+    end
+  end
+  return stack.empty?
 end
