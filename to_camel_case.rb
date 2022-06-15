@@ -11,6 +11,7 @@ Examples
 =end
 
 
+#my solution
 def to_camel_case(str)
   return "" if str.empty?
   camel_string =""
@@ -19,4 +20,9 @@ def to_camel_case(str)
   words = words.drop(1)
   camel_string << words.map(&:capitalize).join
   camel_string
+end
+
+#better solution
+def to_camel_case(str)
+  str.gsub(/[_-](.)/) {"#{$1.upcase}"}
 end
