@@ -27,11 +27,8 @@ def validBraces(braces)
     if(open_braces.include? ch)
       stack.push(ch)
     else
-      #we have a close symbol we can't match to, so the string is not valid
       return false if(stack.empty?)
-      # we have a close symbol that has nothing to match to
       return false if(map[stack.last] != ch)
-      # matches
       stack.pop
     end
   end
