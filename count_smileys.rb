@@ -41,7 +41,10 @@ def count_smileys(arr)
   return count
 end
 
-#using a regexp instead
+#def count_smileys(arr)
+
+end
 def count_smileys_regexp(arr)
-  arr.count { |e| e =~ /(:|;){1}(-|~)?(\)|D)/ }
+
+
 end
