@@ -1,8 +1,8 @@
 def domain_name(url)
   uri = URI.parse(url)
   if(uri.host)
-    return uri.host.split(".")[0]
+    return uri.host
   else
-    return uri.to_s.split(".")[1]
+    return uri.to_s
   end
 end
